@@ -10,8 +10,7 @@ const Academics = () => <div className="p-12 text-vintage-cream max-w-6xl mx-aut
 export default function App() {
   return (
     <Router>
-      <Navbar /> 
-      
+      <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
