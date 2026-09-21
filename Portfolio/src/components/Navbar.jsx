@@ -21,8 +21,8 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         
         {/* Logo / Branding */}
-        <Link to="/" className="text-xl font-bold tracking-wider text-vintage-cream hover:text-vintage-amber transition-colors">
-          PORT<span className="text-vintage-amber">FOLIO.</span>
+        <Link to="/" className="font-display text-xl tracking-tight text-vintage-cream hover:text-vintage-amber transition-colors">
+          Zakaria<span className="text-vintage-amber">.</span>
         </Link>
 
         {/* Desktop Navigation Links */}
