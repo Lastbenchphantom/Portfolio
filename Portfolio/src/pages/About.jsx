@@ -1,9 +1,16 @@
 import { Link } from 'react-router-dom';
 import { profile, skills } from '../data/content';
+import SocialLinks from '../components/SocialLinks';
+import Seo from '../components/Seo';
 
 export default function About() {
   return (
     <main className="min-h-screen py-12 px-6 max-w-6xl mx-auto page-enter">
+      <Seo
+        title="About"
+        description={profile.bio}
+        path="/about"
+      />
       <header className="max-w-3xl mb-16">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-vintage-amber/80 mb-4">
           $ whoami
@@ -49,7 +56,7 @@ export default function About() {
             <h3 className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2">
               Contact
             </h3>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 mb-4">
               <a
                 href={`mailto:${profile.email}`}
                 className="text-vintage-amber hover:text-amber-400 transition-colors"
@@ -64,7 +71,16 @@ export default function About() {
               >
                 github.com/{profile.handle}
               </a>
+              <a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="text-stone-400 hover:text-vintage-cream transition-colors"
+              >
+                LinkedIn
+              </a>
             </div>
+            <SocialLinks />
           </div>
         </div>
       </section>
@@ -91,11 +107,19 @@ export default function About() {
           See projects
         </Link>
         <Link
-          to="/academics"
+          to="/contact"
           className="px-6 py-3 border border-stone-700 text-vintage-cream font-medium rounded-lg hover:border-stone-500 transition-colors"
         >
-          Academics
+          Contact
         </Link>
+        <a
+          href={profile.resume}
+          target="_blank"
+          rel="noreferrer"
+          className="px-6 py-3 border border-stone-700 text-vintage-cream font-medium rounded-lg hover:border-stone-500 transition-colors"
+        >
+          Resume
+        </a>
       </section>
     </main>
   );
