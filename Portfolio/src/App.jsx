@@ -1,22 +1,26 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Home from './pages/Home';
-
-// Placeholder components for your other pages
-const About = () => <div className="p-12 text-vintage-cream max-w-6xl mx-auto">About Page Coming Soon!</div>;
-const Projects = () => <div className="p-12 text-vintage-cream max-w-6xl mx-auto">Projects Page Coming Soon!</div>;
-const Academics = () => <div className="p-12 text-vintage-cream max-w-6xl mx-auto">Academics Page Coming Soon!</div>;
+import About from './pages/About';
+import Projects from './pages/Projects';
+import Academics from './pages/Academics';
 
 export default function App() {
   return (
     <Router>
-      <Navbar></Navbar>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/academics" element={<Academics />} />
-      </Routes>
+      <div className="min-h-screen flex flex-col bg-page">
+        <Navbar />
+        <div className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/academics" element={<Academics />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
     </Router>
   );
 }
