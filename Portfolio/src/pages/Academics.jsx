@@ -1,9 +1,15 @@
 import { Link } from 'react-router-dom';
 import { academics, profile } from '../data/content';
+import Seo from '../components/Seo';
 
 export default function Academics() {
   return (
     <main className="min-h-screen py-12 px-6 max-w-6xl mx-auto page-enter">
+      <Seo
+        title="Academics"
+        description={academics.summary}
+        path="/academics"
+      />
       <header className="max-w-3xl mb-16">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-vintage-amber/80 mb-4">
           $ cat academics.log

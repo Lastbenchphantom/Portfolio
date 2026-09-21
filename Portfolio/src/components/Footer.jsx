@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import { profile } from '../data/content';
+import SocialLinks from './SocialLinks';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -9,21 +11,22 @@ export default function Footer() {
         <p className="text-sm text-stone-500">
           © {year} {profile.name}. Built with React & Vite.
         </p>
-        <div className="flex gap-6 text-sm">
-          <a
-            href={`mailto:${profile.email}`}
-            className="text-stone-400 hover:text-vintage-amber transition-colors"
+        <div className="flex items-center gap-6">
+          <Link
+            to="/contact"
+            className="text-sm text-stone-400 hover:text-vintage-amber transition-colors"
           >
-            Email
-          </a>
+            Contact
+          </Link>
           <a
-            href={profile.github}
+            href={profile.resume}
             target="_blank"
             rel="noreferrer"
-            className="text-stone-400 hover:text-vintage-amber transition-colors"
+            className="text-sm text-stone-400 hover:text-vintage-amber transition-colors"
           >
-            GitHub
+            Resume
           </a>
+          <SocialLinks />
         </div>
       </div>
     </footer>
